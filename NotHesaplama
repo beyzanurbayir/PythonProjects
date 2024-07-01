@@ -1,0 +1,29 @@
+while True:
+        print("1. Not Hesapla")
+        print("2. Çıkış")
+
+        secim= int(input("Seçiminizi yapınız (1/2): "))
+
+        if secim == 1:
+            Vize1 = float(input("1. Vize notunuzu giriniz: "))
+            Vize2 = float(input("2. Vize notunuzu giriniz: "))
+            Final = float(input("Final notunuzu giriniz: "))
+            # Bu örnekte vize 1 ve vize 2 %30; Final %60 etki etmektedir
+            Ortalama = (Vize1*0.3)+(Vize2*0.3)+(Final*0.4)
+            
+            print(f'Ortalamanız: {Ortalama:.2f}')
+
+            if Ortalama>=50 and Ortalama<=100:
+                print("Durum: GEÇTİ!")
+            elif Ortalama<50 and Ortalama>=0:
+                print("Durum: KALDI!")
+        
+
+            print("******************")
+        elif secim== 2:
+            print("Çıkış yapılıyor....")
+            break
+        else:
+            print("Hatalı seçim yaptınız!")
+
+

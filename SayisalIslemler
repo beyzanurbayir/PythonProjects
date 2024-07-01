@@ -1,0 +1,52 @@
+def factorial(n):
+    if n < 0:
+        return "Hata: Negatif sayıların faktöriyeli yoktur."
+    elif n == 0 or n == 1:
+        return 1
+    else:
+        result = 1
+        for i in range(2, n + 1):
+            result *= i
+        return result
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
+
+def main():
+    print("İşlem seçin:")
+    print("1. Faktöriyel")
+    print("2. Asal sayı")
+    print("3. Palindrom sayı")
+
+    choice = input("Seçiminizi girin (1/2/3): ")
+
+    if choice in ['1', '2', '3']:
+        num = int(input("Bir sayı girin: "))
+
+        if choice == '1':
+            print(f"{num} sayısının faktöriyeli: {factorial(num)}")
+
+        elif choice == '2':
+            if is_prime(num):
+                print(f"{num} bir asal sayıdır.")
+            else:
+                print(f"{num} bir asal sayı değildir.")
+
+        elif choice == '3':
+            if is_palindrome(num):
+                print(f"{num} bir palindrom sayıdır.")
+            else:
+                print(f"{num} bir palindrom sayı değildir.")
+
+    else:
+        print("Geçersiz giriş")
+
+main()
